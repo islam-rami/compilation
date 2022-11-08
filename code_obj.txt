@@ -1,0 +1,272 @@
+DATA SEGMENT 
+TAAA DW 10 dup (?) 
+CARACTERE DB ?
+G DD ?
+X DW ?
+B DW ?
+J DW ?
+I DW ?
+A DW ?
+WB DB ?
+AB DW ?
+CONST DD ?
+CHA DB dup(?)
+TEST DB ?
+TAB DW 9 dup (?) 
+CO DB dup(?)
+temp DW 100 dup (?) 
+DATA ENDS
+
+CODE SEGEMENT
+ASSUME CS:CODE, DS:DATA
+MAIN :
+MOV AX,DATA
+MOV DS,AX
+
+MOV I,1 
+MOV AX, I
+CMP AX,14 
+JG etiquette 16
+MOV AX, X
+ADD AX, 7
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+ADD AX, B
+MOV SI,2
+ADD SI,SI
+MOV t[SI],AX 
+MOV AX, 5
+MUL AX, 9
+MOV SI,3
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,2
+ADD SI,SI
+MOV AX, t[SI]
+SUB AX,t[3] 
+MOV SI,4
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,4
+ADD SI,SI
+MOV AX,t[SI] 
+MOV A,AX 
+MOV J,1 
+MOV AX, J
+CMP AX,14 
+JG etiquette 14
+MOV AX, X
+ADD AX, 7
+MOV SI,5
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,5
+ADD SI,SI
+MOV AX, t[SI]
+ADD AX, B
+MOV SI,6
+ADD SI,SI
+MOV t[SI],AX 
+MOV AX, J
+ADD AX, 1
+MOV J,AX 
+MOV AX, 
+CMP AX, 
+JMP etiquette 8
+MOV AX, I
+ADD AX, 1
+MOV I,AX 
+etiquette14:MOV AX, 
+CMP AX, 
+JMP etiquette 1
+MOV AX, A
+CMP AX,3 
+JNE etiquette 19
+etiquette16:MOV t[7],1  
+MOV AX, 
+CMP AX, 
+JMP etiquette 20
+MOV t[7],0  
+etiquette19:MOV AX, 7
+CMP AX,B 
+JBE etiquette 23
+etiquette20:MOV t[8],1  
+MOV AX, 
+CMP AX, 
+JMP etiquette 24
+MOV t[8],0  
+etiquette23:MOV SI,7
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JZ etiquette 28
+etiquette24:MOV SI,8
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JZ etiquette 28
+MOV t[9],1  
+MOV AX, 
+CMP AX, 
+JMP etiquette 29
+MOV t[9],0  
+etiquette28:etiquette28:MOV SI,9
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JZ etiquette 48
+etiquette29:MOV SI,6
+ADD SI,SI
+MOV AX, t[SI]
+SUB AX, 9
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX,3 
+JE etiquette 34
+MOV t[1],1  
+MOV AX, 
+CMP AX, 
+JMP etiquette 35
+MOV t[1],0  
+etiquette34:MOV AX, 15
+ADD AX, A
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+etiquette35:MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX,B 
+JAE etiquette 39
+MOV t[1],1  
+MOV AX, 
+CMP AX, 
+JMP etiquette 40
+MOV t[1],0  
+etiquette39:MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JNZ etiquette 44
+etiquette40:MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JNZ etiquette 44
+MOV t[1],0  
+MOV AX, 
+CMP AX, 
+JMP etiquette 45
+MOV t[1],1  
+etiquette44:etiquette44:MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JZ etiquette 47
+etiquette45:MOV AX, 
+CMP AX, 
+JMP etiquette 47
+MOV AX, 
+CMP AX, 
+JMP etiquette 48
+etiquette47:etiquette47:MOV SI,R
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX,B 
+JBE etiquette 51
+etiquette48:etiquette48:MOV t[1],1  
+MOV AX, 
+CMP AX, 
+JMP etiquette 52
+MOV t[1],0  
+etiquette51:MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+CMP AX, 
+JZ etiquette 48
+etiquette52:MOV SI,R
+ADD SI,SI
+MOV AX,t[SI] 
+MOV TEST,AX 
+MOV AX, X
+ADD AX, 7
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+ADD AX, B
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+MOV AX, 5
+SUB AX, -2
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,1
+ADD SI,SI
+MOV AX, t[SI]
+DIV AX,t[1] 
+MOV SI,1
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,1
+ADD SI,SI
+MOV AX,t[SI] 
+MOV A,AX 
+MOV AX, 56
+ADD AX, B
+MOV SI,2
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,2
+ADD SI,SI
+MOV AX, t[SI]
+DIV AX, 0
+MOV SI,2
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,2
+ADD SI,SI
+MOV AX,t[SI] 
+MOV A,AX 
+MOV AX, 56
+ADD AX, B
+MOV SI,2
+ADD SI,SI
+MOV t[SI],AX 
+MOV AX, B
+ADD AX, 56
+MOV SI,2
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,2
+ADD SI,SI
+MOV AX, t[SI]
+DIV AX,t[2] 
+MOV SI,2
+ADD SI,SI
+MOV t[SI],AX 
+MOV SI,2
+ADD SI,SI
+MOV AX,t[SI] 
+MOV A,AX 
+MOV SI,R
+ADD SI,SI
+MOV AX,t[SI] 
+MOV TEST,AX 
+FIN :
+MOV AH,4CH
+INT 21h
+CODE ENDS
+END MAIN

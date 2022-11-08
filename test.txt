@@ -1,0 +1,86 @@
+< ! docprogram Safa > 
+
+< SUB VARIABLE > 
+   
+< A |I| J|B |X AS INT />   
+< G  AS FLT />
+<TEST AS BOL />
+<CHA AS  STR />
+<CARACTERE AS CHR/>
+< /SUB VARIABLE > 
+
+<SUB CONSTANTE>
+ < CONST AS  FLT /> 
+ < CO AS STR />  
+ < AB = 60 /> 
+ < WB = 'v' /> 
+
+</SUB CONSTANTE>
+
+<ARRAY AS INT > 
+ <TAB: 9/> 
+ <TAAA : 10/> 
+</ARRAY>
+
+
+<body> 
+
+
+<INPUT : A "donner la valeur de : & " />
+
+<OUTPUT: "a est $:"+A+ "b est: $"+B /> 
+
+<FOR I=1 UNTIL 14 > 
+
+     <AFF: A, (X+7+B-5*9) />
+
+ 
+      <FOR J=1 UNTIL 14 > 
+
+           <AFF: A, (X+7+B) />
+            </ FOR >
+</ FOR >
+
+
+< IF : AND(EGA(A,3),SUP(7,B))   > 
+
+< THEN > 
+                  < IF : OR(DIF(A-9,3),INF(15+A,B))   > 
+
+                        < THEN > 
+                               <OUTPUT: " a est $: " + A + "b est $" + B /> 
+                         < /THEN > 
+                         <ELSE> 
+                          <OUTPUT: " a est $: " + A + "b est $" + B /> 
+                          </ELSE> 
+                      </IF> 
+                        <OUTPUT: " a est $: " + A + "b est $" + B /> 
+</ THEN > 
+
+  <ELSE> 
+     < OUTPUT: " a est $: " + A + "b est $" + B /> 
+   </ELSE> 
+
+</IF> 
+
+< DO > 
+
+<OUTPUT: "a est $:"+A+ "b est: $"+B /> 
+< WHILE : SUP(TRUE,B)  /> 
+
+< / DO >
+
+
+ <AFF: TEST, TRUE />
+<AFF: A, (X+7+B)/ (5-(-2))  />
+<AFF: A, (56+B)/ 0  />
+<AFF: A, 56  />
+<AFF: A, (56+B)/ (B+A)  />
+<AFF: CHA, " une chaine de char "/>
+<AFF: CARACTERE, 'c'/>
+
+ <AFF: TEST, TRUE />
+< / body >
+
+
+</docprogram>
